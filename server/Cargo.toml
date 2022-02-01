@@ -1,0 +1,16 @@
+[package]
+name = "p2render-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+serenity = "^0.10"
+tokio = { version = "^1.16.1", features = ["full"]}
+
+actix-web = "^4.0.0-beta.21"
+actix-web-actors = "^4.0.0-beta.10"
+
+rml_rtmp = "^0.6.1"
+futures = "^0.3.19"
+bytes = "^1.1.0"

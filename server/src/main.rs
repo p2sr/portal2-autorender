@@ -1,6 +1,7 @@
 use actix_web::{App, HttpServer};
 
 mod rtmp_connection;
+mod nodes;
 
 const HTTP_LISTEN_ADDRESS: &str = "0.0.0.0:8080";
 const RTMP_LISTEN_ADDRESS: &str = "0.0.0.0:1935";
@@ -20,7 +21,7 @@ async fn main() -> serenity::futures::io::Result<()>{
     });
 
     println!("Spawning HTTP Server");
-    HttpServer::new(move || { App::new() })
+    HttpServer::new(move || { App::new().configure(nodes::ws::init) })
         .bind(HTTP_LISTEN_ADDRESS)?
         .run()
         .await

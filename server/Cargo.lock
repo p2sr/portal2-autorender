@@ -9,6 +9,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3720d0064a0ce5c0de7bd93bdb0a6caebab2a9b5668746145d7b3b0c5da02914"
 dependencies = [
  "actix-rt",
+ "actix_derive",
  "bitflags",
  "bytes 1.1.0",
  "crossbeam-channel",
@@ -216,6 +217,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "98a793e4a7bd059e06e1bc1bd9943b57a47f806de3599d2437441682292c333e"
 dependencies = [
  "actix-router",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "actix_derive"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6d44b8fee1ced9671ba043476deddef739dd0959bf77030b26b738cc591737a7"
+dependencies = [
  "proc-macro2",
  "quote",
  "syn",
@@ -1075,11 +1087,14 @@ checksum = "624a8340c38c1b80fd549087862da4ba43e08858af025b236e509b6649fc13d5"
 name = "p2render-server"
 version = "0.1.0"
 dependencies = [
+ "actix",
  "actix-web",
  "actix-web-actors",
  "bytes 1.1.0",
  "futures",
  "rml_rtmp",
+ "serde",
+ "serde_json",
  "serenity",
  "tokio",
 ]
